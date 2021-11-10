@@ -15,6 +15,9 @@ export class QuestionComponent implements OnInit {
 
   @Input()
   mode:string;
+
+  response:Option;
+
   constructor() { }
   ngOnInit(): void {
   }
@@ -36,7 +39,9 @@ export class QuestionComponent implements OnInit {
   }
   isanswered()
   {
-    
+    if(this.mode=='submit' && !this.isCorrect())
+    return 'Not-Answered';
+
     if(this.mode=='review' && this.qst.answered==false)
     return 'Not-Answered';
     else
@@ -44,7 +49,14 @@ export class QuestionComponent implements OnInit {
     return 'Answered';
     else
     return 'question';
-    
-  
+  }
+
+
+  isCorrect()
+  {
+     let res= this.qst.options.every(o => o.isAnswer==o.selected);
+     this.qst.isCorrect=res;
+     this.response= this.qst.options.filter(o=> o.isAnswer)[0];
+     return res;
   }
 }

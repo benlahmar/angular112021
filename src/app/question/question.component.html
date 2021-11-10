@@ -3,5 +3,13 @@
     {{qst.name}}
     
     <app-option [mode]="mode" (outevent) ="ff($event)" [opt]="o" *ngFor="let o of qst.options"></app-option>
-   
+   <div *ngIf="mode=='submit'">
+    <p *ngIf="isCorrect()">
+       votre reponse est correct
+   </p>
+   <p *ngIf="!isCorrect()">
+    votre reponse est incorrect; 
+    la bonne reponse est :{{response.name}}
+</p>
+</div>
 </div>

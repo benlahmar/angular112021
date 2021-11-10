@@ -20,7 +20,8 @@ export class QuizComponent implements OnInit {
         "shuffleQuestions": true,
         "showPager": false,
         "allowBack": true,
-        "autoMove": true
+        "autoMove": true,
+        "allowReview": true,
     },
     "questions": [
         {
@@ -410,5 +411,9 @@ export class QuizComponent implements OnInit {
   changemode(md:string)
   {
       this.mode=md;
+
   }
+
+
+  
 }

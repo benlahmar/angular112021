@@ -11,6 +11,7 @@ import { OptionComponent } from './option/option.component';
 import { ParantComponent } from './parant/parant.component';
 import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
+import { ConfigComponent } from './config/config.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     QuestionComponent,
     OptionComponent,
     ParantComponent,
-    ChildComponent
+    ChildComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
