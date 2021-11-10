@@ -5,6 +5,7 @@
     <button (click)="changemode('submit')">Submit</button>
 </div>
 <div *ngIf="mode=='quiz'">
+    
     {{quiz.name}}
     <div *ngFor="let q of quiz.questions; index as i">
         <div *ngIf="i==page">
