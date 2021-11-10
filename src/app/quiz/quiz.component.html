@@ -23,13 +23,17 @@
 
 <div *ngIf="mode=='review'">
    <h2>Review</h2> 
-   <div *ngFor="let q of quiz.questions; index as i">
-       <app-question  [qst]="q"  >
+   <div *ngFor="let q of quiz.questions; index as i" >
+       <app-question  [qst]="q" [mode]="mode" >
         </app-question>
 </div>
 
 </div>
 
 <div *ngIf="mode=='submit'">
-    Submit
+   <h2>Submit</h2>
+    <div *ngFor="let q of quiz.questions; index as i" >
+        <app-question  [qst]="q" [mode]="mode" >
+         </app-question>
+</div>
 </div>

@@ -11,6 +11,9 @@ export class OptionComponent implements OnInit {
   @Input()
   opt:Option;
 
+  @Input()
+  mode:string;
+  
   @Output()
   outevent = new EventEmitter();
   constructor() { }
@@ -20,6 +23,6 @@ export class OptionComponent implements OnInit {
   send(x)
   {
     this.outevent.emit(x);
-    console.log(x);
+    
   }
 }

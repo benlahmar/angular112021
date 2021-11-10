@@ -1,5 +1,20 @@
-.qst{
+.Answered{
     margin: 10px;
     padding: 10px;
     border: dashed 1px;
+    background-color:rgba(90, 241, 90,0.5);
+}
+
+.Not-Answered
+{
+    margin: 10px;
+    padding: 10px;
+    border: dashed 1px;
+    background-color: rgba(235, 158, 158,0.8);
+}
+.question{
+    margin: 10px;
+    padding: 10px;
+    border: dashed 1px;
+    background-color: rgba(196, 191, 236, 0.8);
 }

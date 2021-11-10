@@ -1,4 +1,4 @@
 <div>
-  <input type="checkbox"  [(ngModel)]="opt.selected"  (change)="send(opt)" /> {{opt.name}}
+  <input type="checkbox" [disabled]=" mode=='submit'"  [(ngModel)]="opt.selected"  (change)="send(opt)" /> {{opt.name}}
 
 </div>
