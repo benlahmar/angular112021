@@ -1,0 +1,21 @@
+<div class="quiz">
+<div >
+    <h1> {{data.name}}</h1>
+    <span>{{data.description}}</span>
+</div>
+<div *ngFor="let q of data.questions; index as i" class="q">
+       
+    <div *ngIf="i==page">
+       {{i+1}}.  {{q.name}}
+        <ul>
+            <li *ngFor="let o of q.options" class="rep">
+               <input type="checkbox" /> {{o.name}}
+            </li>
+        </ul>
+    <div class="bt">
+        <button (click)="goto(i-1)" *ngIf="i>0" >prev</button>
+        <button (click)="goto(i+1)" [hidden]=" i > data.questions.length-2" >next</button>
+    </div>
+    </div>
+</div>
+</div>

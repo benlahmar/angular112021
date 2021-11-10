@@ -1,0 +1,8 @@
+.mn{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background-color: gold;
+    box-shadow:  5px 5px 5px 5px;
+}

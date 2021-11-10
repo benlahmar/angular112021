@@ -1,0 +1,35 @@
+
+<div>
+    <button (click)="changemode('quiz')">Quiz</button>
+    <button (click)="changemode('review')">Review</button>
+    <button (click)="changemode('submit')">Submit</button>
+</div>
+<div *ngIf="mode=='quiz'">
+    {{quiz.name}}
+    <div *ngFor="let q of quiz.questions; index as i">
+        <div *ngIf="i==page">
+            {{i}}
+            <app-question  [qst]="q"  >
+            </app-question>
+            <div class="bt">
+                <button (click)="goto(i-1)" *ngIf="i>0" >prev</button>
+                <button (click)="goto(i+1)" [hidden]=" i > data.questions.length-2" >next</button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<div *ngIf="mode=='review'">
+   <h2>Review</h2> 
+   <div *ngFor="let q of quiz.questions; index as i">
+       <app-question  [qst]="q"  >
+        </app-question>
+</div>
+
+</div>
+
+<div *ngIf="mode=='submit'">
+    Submit
+</div>

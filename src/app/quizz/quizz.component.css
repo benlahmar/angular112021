@@ -1,0 +1,30 @@
+.quiz{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    background-color: goldenrod;
+    padding: 5px;
+    box-shadow: 5px 5px 5px 5px;
+    width: 500px;
+    
+    perspective: 600px;
+}
+
+
+.rep{
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba(255,255,255,0.5);
+  }
+
+ .bt{
+     text-align: center;
+ } 
+ 
+ div:nth-child(1)>span
+ {
+    background-color: white;
+    margin-bottom: 10px;;
+ }

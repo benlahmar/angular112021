@@ -1,0 +1,11 @@
+
+{{ind}}
+<ul>
+<li *ngFor="let e of items" class="mn" >
+   {{e.id}} <a [href]='e.link' *ngIf="e.id <30" >
+ {{e.titre}} 
+ </a>
+ <button (click)="ff(e.id)"  >+</button>
+</li>
+</ul>
+

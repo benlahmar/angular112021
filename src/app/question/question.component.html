@@ -1,0 +1,6 @@
+<div class="qst">
+    {{qst.name}}
+    
+    <app-option  (outevent) ="ff($event)" [opt]="o" *ngFor="let o of qst.options"></app-option>
+    <p>{{recp | json}}</p>
+</div>
