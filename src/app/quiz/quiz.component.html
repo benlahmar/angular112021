@@ -8,10 +8,13 @@
 </div>
 <div *ngIf="mode=='quiz'">
 
+    <p *ngIf="quiz.config.showClock">{{date}}</p>
+    {{duree}}
+    <p>{{quiz.config.duration -duree }}</p>
     {{quiz.name}}
     <div *ngFor="let q of quiz.questions; index as i">
         <div *ngIf="i==page">
-            {{i}}
+        
             <app-question  [qst]="q"  >
             </app-question>
             <div class="bt">

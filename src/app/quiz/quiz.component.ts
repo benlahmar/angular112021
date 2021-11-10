@@ -8,6 +8,7 @@ import { Quiz } from '../model/Quiz';
 })
 export class QuizComponent implements OnInit {
   page = 0;
+  date:Date;
   ab="xxxx";
   reponses=[];
   abc={"name":"atos 2021"}
@@ -22,6 +23,8 @@ export class QuizComponent implements OnInit {
         "allowBack": true,
         "autoMove": true,
         "allowReview": true,
+        "showClock":true,
+        "duration":10
     },
     "questions": [
         {
@@ -392,12 +395,17 @@ export class QuizComponent implements OnInit {
         }
     ]
 };
+debut:Date;
+duree:number;
     quiz:Quiz;
   constructor() {
-      
+      this.debut=new Date();
+      setInterval(x =>
+        this.date=new Date(),1000);
   }
 
   ngOnInit(): void {
+      this.date=new Date();
       this.quiz=new Quiz(this.data);
       console.log(this.quiz);
   }
@@ -405,7 +413,14 @@ export class QuizComponent implements OnInit {
   goto(x:number)
   {
     this.page = x;
-    console.log(this.page);
+
+    this.howduration();
+    console.log("******"+(this.duree));
+    if(this.duree-this.quiz.config.duration>=0)
+       {
+           
+           this.mode="submit";
+    }
   }
 
   changemode(md:string)
@@ -414,6 +429,12 @@ export class QuizComponent implements OnInit {
 
   }
 
-
+howduration()
+{
+    let dt :Date=new Date();
+     this.duree =dt.getHours()*60 + dt.getMinutes() - this.debut.getHours()*60-this.debut.getMinutes();
+    console.log(dt.getHours()*60 + dt.getMinutes());
+    console.log(this.debut.getHours()*60+this.debut.getMinutes());
+}
   
 }
