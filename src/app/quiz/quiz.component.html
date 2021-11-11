@@ -1,10 +1,15 @@
-<div >
+<div class="container">
+    
+    <p>
+        vous avez demandé le quiz  {{slug}}
+    </p>
+<div class="container">
     <app-config [data]="quiz.config"></app-config>
 </div>
-<div>
-    <button (click)="changemode('quiz')">Quiz</button>
-    <button (click)="changemode('review')" *ngIf="quiz.config.allowReview">Review</button>
-    <button (click)="changemode('submit')">Submit</button>
+<div >
+    <button class="btn btn-primary" (click)="changemode('quiz')">Quiz</button>
+    <button class="btn btn-success" (click)="changemode('review')" *ngIf="quiz.config.allowReview">Review</button>
+    <button class="btn btn-primary" (click)="changemode('submit')">Submit</button>
 </div>
 <div *ngIf="mode=='quiz'">
 
@@ -41,4 +46,5 @@
         <app-question  [qst]="q" [mode]="mode" >
          </app-question>
     </div>
+</div>
 </div>

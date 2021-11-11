@@ -1,11 +1,27 @@
-
-{{ind}}
-<ul>
-<li *ngFor="let e of items" class="mn" >
-   {{e.id}} <a [href]='e.link' *ngIf="e.id <30" >
- {{e.titre}} 
- </a>
- <button (click)="ff(e.id)"  >+</button>
-</li>
-</ul>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/theme">Quiz</a>
+    <a class="navbar-brand" href="/admin">Admin</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="/admin">Admin</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+          >Disabled</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>

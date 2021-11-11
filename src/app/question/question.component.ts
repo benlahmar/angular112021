@@ -18,8 +18,15 @@ export class QuestionComponent implements OnInit {
 
   response:Option;
 
-  constructor() { }
+  constructor() {
+    console.log("********"+this.mode);
+    console.log("execution constructor de question");
+   }
+
   ngOnInit(): void {
+
+    console.log("========="+this.mode);
+    console.log("execution init de question");
   }
   cpt=0;
   ff(vv:Option)
@@ -35,6 +42,7 @@ export class QuestionComponent implements OnInit {
       else
       this.qst.answered=false;
     console.log(this.qst);
+    console.log("==*****==="+this.mode);
 
   }
   isanswered()
