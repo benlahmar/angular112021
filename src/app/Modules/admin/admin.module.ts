@@ -5,10 +5,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ScoreComponent } from './score/score.component';
 import { TabDirective } from './Directives/tab.directive';
+import { PipeadminPipe } from './Pipes/pipeadmin.pipe';
 
 
 @NgModule({
-  declarations: [LoginComponent, ScoreComponent, TabDirective],
+  declarations: [LoginComponent, ScoreComponent, TabDirective, PipeadminPipe],
   imports: [
     CommonModule,
     AdminRoutingModule

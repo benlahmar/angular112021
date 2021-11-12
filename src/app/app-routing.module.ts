@@ -16,6 +16,12 @@ const routes: Routes = [
   .then(mod=>mod.AdminModule)
   
 },
+{
+  path:'users', loadChildren: () =>
+  import('./Modules/users/users.module')
+  .then(mod=>mod.UsersModule)
+  
+},
     {path:'**', component:QuizzComponent}
 ];
 

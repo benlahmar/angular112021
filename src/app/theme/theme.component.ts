@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MyserviceService } from '../Modules/users/Services/myservice.service';
 
 @Component({
   selector: 'app-theme',
@@ -34,14 +35,17 @@ export class ThemeComponent implements OnInit {
   "logo": "assets/images/react.png",
   "description": "description"
 }];
+data2:any;
 abc:string;
-  constructor(private route:ActivatedRoute) { 
+  constructor(private route:ActivatedRoute, ) { 
     this.abc="aaa";
     console.log("constructor");
   }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(x=> this.abc=x.q);
+    
+
     
   }
 

@@ -1,5 +1,6 @@
 <div [class]="isanswered()" >
 
+    
     {{qst.name}}
     
     <app-option [mode]="mode" (outevent) ="ff($event)" [opt]="o" *ngFor="let o of qst.options"></app-option>
@@ -10,6 +11,8 @@
    <p *ngIf="!isCorrect()">
     votre reponse est incorrect; 
     la bonne reponse est :{{response.name}}
+    <br/>
+   ***** {{qst | mypipe | json}}
 </p>
 </div>
 </div>

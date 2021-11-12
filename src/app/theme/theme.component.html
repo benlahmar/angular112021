@@ -1,5 +1,5 @@
 <div class="container">
-******{{abc}}*****
+******{{data2 | json}}*****
 <div class="row">
     <div *ngFor="let t of themes" class="col-md-4 theme">
         <img [src]="t.logo" alt=""/>
@@ -9,3 +9,18 @@
     </div>
 </div>
 </div>
+<mat-horizontal-stepper>
+
+    <mat-step label="Step 1">
+      Step 1 content
+    </mat-step>
+  
+    <mat-step label="Step 2">
+      Step 2 content
+    </mat-step>
+  
+    <mat-step label="Step 3">
+      You are now done.
+    </mat-step>
+    
+  </mat-horizontal-stepper>

@@ -1,40 +1,65 @@
 <div class="container">
-    
     <p>
-        vous avez demandé le quiz  {{slug}}
+        
+    </p>
+    <p>
+        <span [matBadge]="quiz.questions.length" matBadgeOverlap="false">
+             vous avez demandé le quiz:   {{slug | uppercase}}
+             <p>{{quiz.questions.length | currency}}</p>
+         </span>
     </p>
 <div class="container">
     <app-config [data]="quiz.config"></app-config>
 </div>
 <div >
-    <button class="btn btn-primary" (click)="changemode('quiz')">Quiz</button>
-    <button class="btn btn-success" (click)="changemode('review')" *ngIf="quiz.config.allowReview">Review</button>
-    <button class="btn btn-primary" (click)="changemode('submit')">Submit</button>
+    <button mat-fab  (click)="changemode('quiz')">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    </button>
+    <button mat-button (click)="changemode('review')" *ngIf="quiz.config.allowReview">Review</button>
+    <button mat-raised-button color="primary" (click)="changemode('submit')">Submit</button>
 </div>
 <div *ngIf="mode=='quiz'">
 
-    <p *ngIf="quiz.config.showClock">{{date}}</p>
-    {{duree}}
-    <p>{{quiz.config.duration -duree }}</p>
+    <p *ngIf="quiz.config.showClock">{{date | date:'d/M/y: h-m-s'}}</p>
+   
+    
     {{quiz.name}}
+    
     <div *ngFor="let q of quiz.questions; index as i">
         <div *ngIf="i==page">
-        
+            <mat-card class="example-card">
+                <mat-card-subtitle>{{q.name}}</mat-card-subtitle>
+                <mat-card-title>ss</mat-card-title>
+                <mat-card-content>
             <app-question  [qst]="q"  >
             </app-question>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+            <button mat-button (click)="goto(i-1)" *ngIf="i>0 && quiz.config.allowBack" >prev</button>
+            <button mat-button (click)="goto(i+1)" [hidden]=" i > data.questions.length-2" >next</button>
+        </mat-card-actions>
+        <mat-card-footer>
+            <mat-progress-bar mode="determinate" [value]="(i+1)*10"></mat-progress-bar>
+        </mat-card-footer>
+</mat-card>
             <div class="bt">
-                <button (click)="goto(i-1)" *ngIf="i>0 && quiz.config.allowBack" >prev</button>
-                <button (click)="goto(i+1)" [hidden]=" i > data.questions.length-2" >next</button>
+                
+                
             </div>
         </div>
         
     </div>
-    
+            
+    <hr/>
+
+   
+        
 </div>
 
 <div *ngIf="mode=='review'">
    <h2>Review</h2> 
-   <div *ngFor="let q of quiz.questions; index as i" >
+   <div *ngFor="let q of quiz.questions | mypipe2; index as i" >
        <app-question  [qst]="q" [mode]="mode" >
         </app-question>
     </div>
