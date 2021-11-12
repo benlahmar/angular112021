@@ -447,4 +447,9 @@ howduration()
     console.log(this.debut.getHours()*60+this.debut.getMinutes());
 }
   
+async synccall()
+{
+    let resultats = await this.service.getquiz().toPromise();
+    console.log("****************"+resultats.name);
+}
 }

@@ -6,6 +6,7 @@ import { Quiz } from '../model/Quiz';
   providedIn: 'root'
 })
 export class QuizService {
+ islog:false;
 
   constructor(private http:HttpClient) { }
 

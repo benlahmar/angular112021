@@ -1,8 +1,37 @@
 <p >score works!</p>
+<form>
+    <input id="e" [formControl]="email"  />
+    <input id="e2" [formControl]="txt"  />
+    <input type="submit" value="submit"/>
+</form>
 
-<h1 >{{score}}</h1>
-<div appTab line="2" col="2" [tt]="ab"> 
+<hr/>
+<div class="container">
+    <div class="row">
+<form  [formGroup]="formg" (ngSubmit)="send()">
+    <input id="X1" type="number" formControlName="id"  /><br/>
+    <input id="X2"   type="text" formControlName="name"  /><br/>
+    <input id="X3" type="checkbox" formControlName="answered"  /><br/>
+    <app-formlog ></app-formlog>
+    <br/>
+    <input type="submit" class="btn btn-primary btn-block" value="submit" [disabled]="formg.status=='INVALID'"/>
+    
+   
+</form>
 </div>
+</div>
+
+{{option | json}}
+
+<hr/>
+<input required type="text" #abc="ngModel" [(ngModel)]="score"/>{{score}}
+{{abc.valid }}
+
+<div class="alert alert-danger" *ngIf="abc.valid">
+  <label>entrer votre xxx</label>  <input type="checkbox" [(ngModel)]="aa" />{{aa}}
+</div>
+<h1 >{{score}}</h1>
+
 
 <hr/>
 <div appTab line="1" col="6" [tt]="ab"> 
